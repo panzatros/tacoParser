@@ -71,6 +71,8 @@ impl LiteralTrait for String {
     // this is another overwrite for Literal Traint that willchange depending what this recive
 }
 
+// is this necessary ?
+// no, this is not necessary, just force og habit i guess XD, will correct soon
 impl Token {
     pub fn set_lexeme(&mut self, lexeme: &str) {
         self.lexeme = lexeme;
