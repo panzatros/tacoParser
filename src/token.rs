@@ -61,6 +61,10 @@ pub struct Token {
 
 impl LiteralTrait for i32 {
     // this do something still planing
+    fn manage_the_literal(&self) {
+        //do something here
+        println!("{}", self);
+    }
 }
 
 impl LiteralTrait for String {
@@ -72,16 +76,32 @@ impl Token {
         self.lexeme = lexeme;
     }
 
+    pub fn get_lexeme(&self) -> &str {
+        self.lexeme
+    }
+
     pub fn set_literal(&mut self, literal: Box<dyn LiteralTrait>) {
         self.literal = literal;
+    }
+
+    pub fn get_literal(&self) -> Box<dyn LiteralTrait> {
+        self.literal
     }
 
     pub fn set_token_definition(&mut self, token_definition: TokenType) {
         self.token_definition = token_definition;
     }
 
+    pub fn get_token_definition(&self) -> TokenType {
+        self.token_definition
+    }
+
     pub fn set_line(&mut self, line: &usize) {
         self.line = *line;
+    }
+
+    pub fn get_line(&self) -> &usize {
+        *self.line
     }
 }
 
